@@ -25,7 +25,8 @@ const entityMetaData = async (connection: DataSource) => {
   const connectionMetadataBuilder = new ConnectionMetadataBuilder(connection);
 
   const { entities } = connection.options;
-  const TEntities = entities as (Function | EntitySchema<any> | string)[];
+  // eslint-disable-next-line @typescript-eslint/ban-types 
+  const TEntities = entities as (Function | EntitySchema<any> | string)[]; // eslint-disable-line @typescript-eslint/no-explicit-any
 
   let entityMetadata;
 
@@ -89,7 +90,7 @@ const handleRelation = (
 
   let target = inverseEntityMetadata.tableName;
   let derivedRelationType = relationType;
-  let derivedJoinTable =
+  const derivedJoinTable =
     inverseRelation && inverseRelation.joinTableName
       ? inverseRelation.joinTableName
       : joinTableName;

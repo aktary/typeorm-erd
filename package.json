@@ -1,7 +1,7 @@
 {
   "name": "typeorm-erd",
   "description": "Create ERD from TypeORM with outputs as Mermaid, or PlantUML",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Simon Reilly",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
@@ -13,13 +13,16 @@
     "eslint": "^8.16.0",
     "husky": "^7.0.0",
     "jest": "^28.1.0",
-    "reflect-metadata": "^0.1.13",
+    "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.0.8",
     "syncpack": "^8.0.0",
-    "ts-jest": "^28.0.3",
+    "ts-jest": "^29.3.0",
     "ts-node": "^10.8.0",
-    "typeorm": "^0.3.6",
-    "typescript": "^4.7.2"
+    "typeorm": "^0.3.21",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": "^18.10.0"
   },
   "files": [
     "dist/"
@@ -34,8 +37,8 @@
   "license": "ISC",
   "main": "dist/index.js",
   "peerDependencies": {
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.6"
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.21"
   },
   "repository": "simonireilly/typeorm-erd",
   "scripts": {

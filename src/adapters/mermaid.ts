@@ -47,7 +47,7 @@ export class MermaidErd {
   }
 
   public buildRelations() {
-    return Object.entries(this.relations).reduce((acc, [key, values]) => {
+    return Object.entries(this.relations).reduce((acc, [ , values]) => {
       const relations = values.entityRelations.map((rel) => {
         // Remove unnamed relations and only add relations for the explicit owner
         if (!rel.propertyPath || !rel.isOwning) return "";
@@ -66,7 +66,7 @@ export class MermaidErd {
       .map((entry) => {
         const columns = entry.columns.map((column) => {
           return [
-            this.dataSource.driver.normalizeType(column),
+            this.dataSource.driver.normalizeType(column).replace(/\s+/g, "_"),
             column.databaseName,
             column.isPrimary ? "PK" : column.referencedColumn ? "FK" : "",
             column.comment && `"${column.comment}"`,
